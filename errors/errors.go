@@ -9,6 +9,11 @@ type InternalError struct {
 	Derror
 }
 
+/*
+ * Status code 0 means operation successful and status code 1 indicates
+ * that an internal error occurred. These two codes are reserved and no function
+ * must not use these codes
+ */
 var (
 	InternalErrorOccurred = InternalError{Derror{
 		Message: "An internal error occurred",
