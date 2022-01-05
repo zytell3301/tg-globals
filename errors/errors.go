@@ -1,10 +1,10 @@
 package errors
 
-type derror struct {
+type Derror struct {
 	Message string
 	Code    uint32
 }
 
-func (e derror) Error() string {
+func (e Derror) Error() string {
 	return e.Message
 }
