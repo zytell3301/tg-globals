@@ -9,6 +9,10 @@ type InternalError struct {
 	Derror
 }
 
+type EntityNotFound struct {
+	Derror
+}
+
 /*
  * Status code 0 means operation successful and status code 1 indicates
  * that an internal error occurred. These two codes are reserved and no function
@@ -19,6 +23,12 @@ var (
 		Message: "An internal error occurred",
 		Code:    1,
 	}}
+
+	EntityNotFoundError = EntityNotFound{
+		Derror{
+			Message: "Entity not found",
+		},
+	}
 )
 
 func (e Derror) Error() string {
